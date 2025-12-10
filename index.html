@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Онлаин школа по программированию" />
+    <meta
+      name="keywords"
+      content="школа, программирование, разработка, кодинг"
+    />
+    <meta name="author" content="Артур Мрикаев" />
+    <title>CodeCraft Academy - Обучение программированию</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
+  </head>
+  <body>
+    <!-- Навигация -->
+    <header class="header">
+      <div class="container">
+        <nav class="navbar">
+          <a href="#" class="logo">
+            <i class="fas fa-code"></i>
+            <span>CodeCraft</span>Academy
+          </a>
+
+          <ul class="nav-menu">
+            <li><a href="#home" class="nav-link">Главная</a></li>
+            <li><a href="#about" class="nav-link">О курсах</a></li>
+            <li><a href="#teachers" class="nav-link">Преподаватели</a></li>
+            <li><a href="#examples" class="nav-link">Примеры работ</a></li>
+            <li><a href="#courses" class="nav-link">Курсы</a></li>
+            <li><a href="#contact" class="nav-link">Записаться</a></li>
+          </ul>
+
+          <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle">
+              <i class="fas fa-moon"></i>
+              <i class="fas fa-sun"></i>
+            </button>
+            <button class="menu-toggle" id="menuToggle">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Главный экран -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Начни свой путь в программировании с
+            <span class="highlight">CodeCraft Academy</span>
+          </h1>
+          <p class="hero-subtitle">
+            Обучение JavaScript и Python от основ до профессионального уровня
+            под руководством опытных преподавателей
+          </p>
+          <div class="hero-actions">
+            <a href="#courses" class="btn btn-primary">Выбрать курс</a>
+            <a href="#teachers" class="btn btn-outline"
+              >Узнать о преподавателях</a
+            >
+          </div>
+        </div>
+        <div class="hero-illustration">
+          <div class="code-editor">
+            <div class="code-header">
+              <div class="code-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <span class="code-title">example.js</span>
+            </div>
+            <div class="code-body">
+              <pre><code>// Создаем интерактивное веб-приложение
+const createApp = () => {
+  const app = {
+    name: "CodeCraft Academy",
+    students: [],
+    
+    addStudent(student) {
+      this.students.push(student);
+      return `Студент ${student} добавлен!`;
+    }
+  };
+  
+  return app;
+};
+
+// Начни свой путь в программировании
+const academy = createApp();
+academy.addStudent("Ваше имя");</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- О курсах -->
+    <section id="about" class="section about">
+      <div class="container">
+        <h2 class="section-title">
+          Почему выбирают <span class="highlight">CodeCraft Academy</span>?
+        </h2>
+        <p class="section-subtitle">
+          Мы предлагаем современный подход к обучению программированию с фокусом
+          на практике и реальных проектах
+        </p>
+
+        <div class="features">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>Практические проекты</h3>
+            <p>
+              Вы создадите 5+ реальных проектов для портфолио во время обучения
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <h3>Опытные преподаватели</h3>
+            <p>
+              Наши преподаватели - практикующие разработчики с многолетним
+              опытом
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <h3>Карьерная поддержка</h3>
+            <p>Помощь в составлении резюме и подготовке к собеседованиям</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Сообщество</h3>
+            <p>Доступ к закрытому сообществу выпускников и нетворкингу</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Преподаватели -->
+    <section id="teachers" class="section teachers">
+      <div class="container">
+        <h2 class="section-title">
+          Наши <span class="highlight">преподаватели</span>
+        </h2>
+        <p class="section-subtitle">
+          Профессионалы с реальным опытом в разработке программного обеспечения
+        </p>
+
+        <div class="teachers-slider">
+          <!-- Слайд 1 -->
+          <div class="teacher-slide active">
+            <div class="teacher-content">
+              <div class="teacher-image">
+                <img
+                  src="/assets/images/teachers/rik.jpg"
+                  alt="Артур Мрикаев"
+                  class="teacher-photo"
+                />
+                <div class="teacher-social">
+                  <a href="#" class="social-link"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                  <a href="#" class="social-link"
+                    ><i class="fab fa-linkedin"></i
+                  ></a>
+                  <a href="#" class="social-link"
+                    ><i class="fab fa-telegram"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="teacher-info">
+                <h3>Артур Мрикаев</h3>
+                <p class="teacher-title">
+                  Ведущий преподаватель, Full-Stack разработчик
+                </p>
+                <div class="teacher-experience">
+                  <span><i class="fas fa-code"></i> 8+ лет в разработке</span>
+                  <span
+                    ><i class="fas fa-graduation-cap"></i> 5+ лет
+                    преподавания</span
+                  >
+                  <span
+                    ><i class="fas fa-briefcase"></i> Ex-Яндекс, Тинькофф</span
+                  >
+                </div>
+                <p class="teacher-description">
+                  Специалист по JavaScript и Python с опытом работы в крупных
+                  IT-компаниях. Артур умеет объяснять сложные концепции простым
+                  языком и делает акцент на практическом применении знаний. Под
+                  его руководством более 200 студентов начали карьеру в IT.
+                </p>
+                <div class="teacher-quote">
+                  <i class="fas fa-quote-left"></i>
+                  <p>
+                    Программирование — это не просто написание кода, это способ
+                    мышления и решения проблем.
+                  </p>
+                </div>
+                <div class="teacher-skills">
+                  <span class="skill-tag">JavaScript</span>
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">React</span>
+                  <span class="skill-tag">Node.js</span>
+                  <span class="skill-tag">Django</span>
+                  <span class="skill-tag">Базы данных</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Слайд 2 -->
+          <div class="teacher-slide">
+            <div class="teacher-content">
+              <div class="teacher-image">
+                <img
+                  src="/assets/images/teachers/bart.jpg"
+                  alt="Пупкин Залупкин"
+                  class="teacher-photo"
+                />
+                <div class="teacher-social">
+                  <a href="#" class="social-link"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                  <a href="#" class="social-link"
+                    ><i class="fab fa-linkedin"></i
+                  ></a>
+                  <a href="#" class="social-link"
+                    ><i class="fab fa-telegram"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="teacher-info">
+                <h3>Пупкин Залупкин</h3>
+                <p class="teacher-title">
+                  Frontend разработчик, специалист по React
+                </p>
+                <div class="teacher-experience">
+                  <span><i class="fas fa-code"></i> 6+ лет в разработке</span>
+                  <span
+                    ><i class="fas fa-graduation-cap"></i> 4+ года
+                    преподавания</span
+                  >
+                  <span
+                    ><i class="fas fa-briefcase"></i> Ex-Avangard, Сбер</span
+                  >
+                </div>
+                <p class="teacher-description">
+                  Эксперт в создании современных пользовательских интерфейсов.
+                  Пупкин специализируется на React и экосистеме frontend
+                  разработки. Участвовала в разработке проектов для
+                  международных компаний. Автор курса по современному фронтенду.
+                </p>
+                <div class="teacher-quote">
+                  <i class="fas fa-quote-left"></i>
+                  <p>
+                    Красивый код — это код, который легко читать и поддерживать.
+                  </p>
+                </div>
+                <div class="teacher-skills">
+                  <span class="skill-tag">React</span>
+                  <span class="skill-tag">TypeScript</span>
+                  <span class="skill-tag">Vue.js</span>
+                  <span class="skill-tag">UI/UX</span>
+                  <span class="skill-tag">Webpack</span>
+                  <span class="skill-tag">SASS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Слайд 3 -->
+          <div class="teacher-slide">
+            <div class="teacher-content">
+              <div class="teacher-image">
+                <img
+                  src="/assets/images/teachers/maxresdefault.jpg"
+                  alt="Максим Хуёв"
+                  class="teacher-photo"
+                />
+                <div class="teacher-social">
+                  <a href="#" class="social-link"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                  <a href="#" class="social-link"
+                    ><i class="fab fa-linkedin"></i
+                  ></a>
+                  <a href="#" class="social-link"
+                    ><i class="fab fa-telegram"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="teacher-info">
+                <h3>Максим Хуёв</h3>
+                <p class="teacher-title">Backend разработчик, Python Expert</p>
+                <div class="teacher-experience">
+                  <span><i class="fas fa-code"></i> 7+ лет в разработке</span>
+                  <span
+                    ><i class="fas fa-graduation-cap"></i> 3+ года
+                    преподавания</span
+                  >
+                  <span><i class="fas fa-briefcase"></i> Ex-Ozon, Lamoda</span>
+                </div>
+                <p class="teacher-description">
+                  Специализируется на создании высоконагруженных backend-систем.
+                  Имеет опыт работы с микросервисной архитектурой, базами данных
+                  и облачными решениями. Ведет курс по продвинутому Python и
+                  архитектуре приложений.
+                </p>
+                <div class="teacher-quote">
+                  <i class="fas fa-quote-left"></i>
+                  <p>
+                    Хорошая архитектура позволяет масштабировать проект без
+                    увеличения сложности кода.
+                  </p>
+                </div>
+                <div class="teacher-skills">
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">Django</span>
+                  <span class="skill-tag">FastAPI</span>
+                  <span class="skill-tag">PostgreSQL</span>
+                  <span class="skill-tag">Redis</span>
+                  <span class="skill-tag">Docker</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Слайд 4 -->
+          <div class="teacher-slide">
+            <div class="teacher-content">
+              <div class="teacher-image">
+                <img
+                  src="/assets/images/teachers/piter-griffin.jpg"
+                  alt="Екатерина Анальная"
+                  class="teacher-photo"
+                />
+                <div class="teacher-social">
+                  <a href="#" class="social-link"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                  <a href="#" class="social-link"
+                    ><i class="fab fa-linkedin"></i
+                  ></a>
+                  <a href="#" class="social-link"
+                    ><i class="fab fa-telegram"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="teacher-info">
+                <h3>Екатерина Анальная</h3>
+                <p class="teacher-title">Mobile разработчик, React Native</p>
+                <div class="teacher-experience">
+                  <span><i class="fas fa-code"></i> 5+ лет в разработке</span>
+                  <span
+                    ><i class="fas fa-graduation-cap"></i> 2+ года
+                    преподавания</span
+                  >
+                  <span
+                    ><i class="fas fa-briefcase"></i> Ex-Wildberries, Delivery
+                    Club</span
+                  >
+                </div>
+                <p class="teacher-description">
+                  Специалист по кроссплатформенной мобильной разработке.
+                  Создавала приложения для iOS и Android с использованием React
+                  Native. Фокус на производительности и пользовательском опыте.
+                </p>
+                <div class="teacher-quote">
+                  <i class="fas fa-quote-left"></i>
+                  <p>
+                    Мобильное приложение должно быть быстрым, отзывчивым и
+                    интуитивно понятным.
+                  </p>
+                </div>
+                <div class="teacher-skills">
+                  <span class="skill-tag">React Native</span>
+                  <span class="skill-tag">TypeScript</span>
+                  <span class="skill-tag">iOS/Android</span>
+                  <span class="skill-tag">Redux</span>
+                  <span class="skill-tag">GraphQL</span>
+                  <span class="skill-tag">Firebase</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Слайд 5 -->
+          <div class="teacher-slide">
+            <div class="teacher-content">
+              <div class="teacher-image">
+                <img
+                  src="/assets/images/teachers/futurama_bender.jpg"
+                  alt="Дмитрий Гей"
+                  class="teacher-photo"
+                />
+                <div class="teacher-social">
+                  <a href="#" class="social-link"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                  <a href="#" class="social-link"
+                    ><i class="fab fa-linkedin"></i
+                  ></a>
+                  <a href="#" class="social-link"
+                    ><i class="fab fa-telegram"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="teacher-info">
+                <h3>Дмитрий Гей</h3>
+                <p class="teacher-title">DevOps инженер, Cloud Architect</p>
+                <div class="teacher-experience">
+                  <span><i class="fas fa-code"></i> 9+ лет в разработке</span>
+                  <span
+                    ><i class="fas fa-graduation-cap"></i> 4+ года
+                    преподавания</span
+                  >
+                  <span
+                    ><i class="fas fa-briefcase"></i> Ex-Yandex Cloud,
+                    Selectel</span
+                  >
+                </div>
+                <p class="teacher-description">
+                  Эксперт по DevOps практикам и облачным технологиям. Помогает
+                  студентам понять процессы деплоя, мониторинга и
+                  масштабирования приложений. Ведет курс по современным подходам
+                  к DevOps.
+                </p>
+                <div class="teacher-quote">
+                  <i class="fas fa-quote-left"></i>
+                  <p>
+                    Автоматизация — ключ к эффективной разработке и надежной
+                    эксплуатации.
+                  </p>
+                </div>
+                <div class="teacher-skills">
+                  <span class="skill-tag">Docker</span>
+                  <span class="skill-tag">Kubernetes</span>
+                  <span class="skill-tag">AWS</span>
+                  <span class="skill-tag">CI/CD</span>
+                  <span class="skill-tag">Terraform</span>
+                  <span class="skill-tag">Linux</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-controls">
+          <button class="slider-btn prev" id="prevTeacher">
+            <i class="fas fa-chevron-up"></i>
+          </button>
+
+          <div class="teacher-miniatures">
+            <div class="miniature active" data-index="0">
+              <img
+                src="/assets/images/teachers/rik.jpg"
+                alt="Артур Мрикаев"
+              />
+              <div class="miniature-overlay">
+                <span>Артур</span>
+              </div>
+            </div>
+            <div class="miniature" data-index="1">
+              <img
+                src="/assets/images/teachers/bart.jpg"
+                alt="Пупкин Залупкин"
+              />
+              <div class="miniature-overlay">
+                <span>Пупкин</span>
+              </div>
+            </div>
+            <div class="miniature" data-index="2">
+              <img
+                src="/assets/images/teachers/maxresdefault.jpg"
+                alt="Максим Хуёв"
+              />
+              <div class="miniature-overlay">
+                <span>Максим</span>
+              </div>
+            </div>
+            <div class="miniature" data-index="3">
+              <img
+                src="/assets/images/teachers/piter-griffin.jpg"
+                alt="Екатерина Анальная"
+              />
+              <div class="miniature-overlay">
+                <span>Екатерина</span>
+              </div>
+            </div>
+            <div class="miniature" data-index="4">
+              <img
+                src="/assets/images/teachers/futurama_bender.jpg"
+                alt="Дмитрий Гей"
+              />
+              <div class="miniature-overlay">
+                <span>Дмитрий</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="slider-btn next" id="nextTeacher">
+            <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Примеры работ -->
+    <section id="examples" class="section examples">
+      <div class="container">
+        <h2 class="section-title">
+          Что вы <span class="highlight">научитесь создавать</span>
+        </h2>
+        <p class="section-subtitle">
+          Практические проекты на JavaScript и Python, которые вы реализуете в
+          процессе обучения
+        </p>
+
+        <div class="examples-grid">
+          <div class="example-card">
+            <div class="example-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3>Веб-приложения</h3>
+            <p>
+              Полнофункциональные веб-приложения с современным интерфейсом и
+              бэкенд-логикой
+            </p>
+            <div class="tech-stack">
+              <span>JavaScript</span>
+              <span>React</span>
+              <span>Node.js</span>
+            </div>
+          </div>
+
+          <div class="example-card">
+            <div class="example-icon">
+              <i class="fas fa-gamepad"></i>
+            </div>
+            <h3>Браузерные игры</h3>
+            <p>
+              Интерактивные игры на JavaScript с использованием Canvas и игровых
+              движков
+            </p>
+            <div class="tech-stack">
+              <span>JavaScript</span>
+              <span>HTML5 Canvas</span>
+              <span>Phaser.js</span>
+            </div>
+          </div>
+
+          <div class="example-card">
+            <div class="example-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Анализ данных</h3>
+            <p>
+              Скрипты для анализа и визуализации данных с использованием
+              библиотек Python
+            </p>
+            <div class="tech-stack">
+              <span>Python</span>
+              <span>Pandas</span>
+              <span>Matplotlib</span>
+            </div>
+          </div>
+
+          <div class="example-card">
+            <div class="example-icon">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3>Автоматизация</h3>
+            <p>
+              Боты и скрипты для автоматизации рутинных задач и работы с API
+            </p>
+            <div class="tech-stack">
+              <span>Python</span>
+              <span>Selenium</span>
+              <span>API</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Интерактивная хрень которую я заебался делать -->
+    <section id="demo" class="section demo">
+      <div class="container">
+        <h2 class="section-title">
+          Интерактивная <span class="highlight">демонстрация</span>
+        </h2>
+        <p class="section-subtitle">
+          Прокрутите, чтобы увидеть как оживает код. Каждая анимация показывает
+          реальный пример работы JavaScript
+        </p>
+
+        <div class="demo-container">
+          <!-- Левая панель с кодом -->
+          <div class="code-panel">
+            <div class="code-tabs">
+              <button class="code-tab active" data-tab="security">
+                Безопасность
+              </button>
+              <button class="code-tab" data-tab="animation">Анимации</button>
+              <button class="code-tab" data-tab="interaction">
+                Взаимодействие
+              </button>
+            </div>
+
+            <div class="code-content">
+              <div class="code-snippet active" id="security-snippet">
+                <div class="code-header">
+                  <span class="code-language">JavaScript</span>
+                  <span class="code-file">security-demo.js</span>
+                </div>
+                <pre><code id="security-code">// Пример защиты от XSS атак
+function sanitizeInput(input) {
+    const div = document.createElement('div');
+    div.textContent = input;
+    return div.innerHTML;
+}
+
+// Валидация данных перед отправкой
+function validateForm(data) {
+    const errors = [];
+    
+    if (!data.email.includes('@')) {
+        errors.push('Некорректный email');
+        <span class="code-highlight active">highlightElement('email-error');</span>
+    }
+    
+    if (data.password.length < 8) {
+        errors.push('Пароль слишком короткий');
+        <span class="code-highlight">highlightElement('password-error');</span>
+    }
+    
+    return errors.length === 0;
+}
+
+// Защита от CSRF
+const csrfToken = generateToken();
+setCookie('csrf_token', csrfToken);</code></pre>
+              </div>
+
+              <div class="code-snippet" id="animation-snippet">
+                <div class="code-header">
+                  <span class="code-language">JavaScript</span>
+                  <span class="code-file">animations.js</span>
+                </div>
+                <pre><code id="animation-code">// Плавная анимация по скроллу
+function animateOnScroll() {
+    const elements = document.querySelectorAll('.animate');
+    
+    elements.forEach(element => {
+        const position = element.getBoundingClientRect();
+        
+        if (position.top < window.innerHeight * 0.8) {
+            element.classList.add('animated');
+            <span class="code-highlight">element.style.transform = 'translateY(0)';</span>
+            <span class="code-highlight">element.style.opacity = '1';</span>
+        }
+    });
+}
+
+// Анимация чисел
+function animateCounter(element, target) {
+    let current = 0;
+    const increment = target / 50;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = target;
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(current);
+        }
+    }, 20);
+}</code></pre>
+              </div>
+
+              <div class="code-snippet" id="interaction-snippet">
+                <div class="code-header">
+                  <span class="code-language">JavaScript</span>
+                  <span class="code-file">interactions.js</span>
+                </div>
+                <pre><code id="interaction-code">// Обработка drag-and-drop
+function setupDragAndDrop() {
+    const draggables = document.querySelectorAll('[draggable="true"]');
+    
+    draggables.forEach(draggable => {
+        draggable.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', draggable.id);
+            <span class="code-highlight">draggable.classList.add('dragging');</span>
+        });
+        
+        draggable.addEventListener('dragend', () => {
+            <span class="code-highlight">draggable.classList.remove('dragging');</span>
+        });
+    });
+}
+
+// Динамическое обновление контента
+function updateContent(data) {
+    const container = document.getElementById('content');
+    
+    // Безопасное обновление DOM
+    container.innerHTML = '';
+    data.forEach(item => {
+        const element = document.createElement('div');
+        <span class="code-highlight">element.textContent = sanitizeInput(item.content);</span>
+        container.appendChild(element);
+    });
+    
+    // Анимация появления
+    <span class="code-highlight">animateElements(container.children);</span>
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Правая панель с визуализацией -->
+          <div class="visual-panel">
+            <div class="visual-container">
+              <!-- Демо 1: Валидация формы -->
+              <div class="visual-demo active" id="security-demo">
+                <h3><i class="fas fa-shield-alt"></i> Валидация формы</h3>
+                <div class="form-demo">
+                  <div class="form-group">
+                    <label for="demo-email">Email:</label>
+                    <input
+                      type="email"
+                      id="demo-email"
+                      placeholder="example@mail.com"
+                    />
+                    <div
+                      class="error-message"
+                      id="email-error"
+                      style="display: none"
+                    >
+                      <i class="fas fa-exclamation-circle"></i> Некорректный
+                      email
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="demo-password">Пароль:</label>
+                    <input
+                      type="password"
+                      id="demo-password"
+                      placeholder="минимум 8 символов"
+                    />
+                    <div
+                      class="error-message"
+                      id="password-error"
+                      style="display: none"
+                    >
+                      <i class="fas fa-exclamation-circle"></i> Пароль слишком
+                      короткий
+                    </div>
+                  </div>
+
+                  <button class="btn btn-primary" id="validate-btn">
+                    Проверить
+                  </button>
+
+                  <div class="validation-result" id="validation-result">
+                  </div>
+                </div>
+
+                <div class="demo-explanation">
+                  <p>
+                    <strong>Что происходит:</strong> JavaScript проверяет
+                    корректность введенных данных в реальном времени и
+                    подсвечивает ошибки.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Демо 2: Анимации -->
+              <div class="visual-demo" id="animation-demo">
+                <h3><i class="fas fa-play-circle"></i> Анимации при скролле</h3>
+
+                <div class="animation-area">
+                  <div class="animated-box" id="box1">
+                    <span>Element 1</span>
+                  </div>
+                  <div class="animated-box" id="box2">
+                    <span>Element 2</span>
+                  </div>
+                  <div class="animated-box" id="box3">
+                    <span>Element 3</span>
+                  </div>
+                  <div class="animated-box" id="box4">
+                    <span>Element 4</span>
+                  </div>
+                </div>
+
+                <div class="counter-demo">
+                  <div class="counter">
+                    <div class="counter-value" id="counter1">0</div>
+                    <div class="counter-label">Проектов</div>
+                  </div>
+                  <div class="counter">
+                    <div class="counter-value" id="counter2">0</div>
+                    <div class="counter-label">Студентов</div>
+                  </div>
+                  <div class="counter">
+                    <div class="counter-value" id="counter3">0</div>
+                    <div class="counter-label">Часов кода</div>
+                  </div>
+                </div>
+
+                <div class="demo-explanation">
+                  <p>
+                    <strong>Что происходит:</strong> Элементы анимируются при
+                    прокрутке страницы, счетчики увеличиваются с анимацией.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Демо 3: Drag & Drop -->
+              <div class="visual-demo" id="interaction-demo">
+                <h3><i class="fas fa-hand-pointer"></i> Drag & Drop</h3>
+
+                <div class="drag-demo-container">
+                  <div class="drag-source">
+                    <h4>Перетащите элементы:</h4>
+                    <div
+                      class="draggable-item"
+                      draggable="true"
+                      data-type="html"
+                    >
+                      <i class="fab fa-html5"></i> HTML
+                    </div>
+                    <div
+                      class="draggable-item"
+                      draggable="true"
+                      data-type="css"
+                    >
+                      <i class="fab fa-css3-alt"></i> CSS
+                    </div>
+                    <div class="draggable-item" draggable="true" data-type="js">
+                      <i class="fab fa-js"></i> JavaScript
+                    </div>
+                  </div>
+
+                  <div class="drop-zone">
+                    <h4>Область назначения:</h4>
+                    <div class="drop-area" id="drop-area">
+                      <p>Перетащите сюда элементы</p>
+                    </div>
+                    <div class="drop-info">
+                      <p>Элементов: <span id="drop-count">0</span></p>
+                      <button class="btn btn-outline" id="clear-drops">
+                        Очистить
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="demo-explanation">
+                  <p>
+                    <strong>Что происходит:</strong> Элементы можно
+                    перетаскивать между областями. Реализовано на чистом
+                    JavaScript.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="visual-controls">
+              <button class="btn btn-outline" id="reset-demo">
+                <i class="fas fa-redo"></i> Сбросить демо
+              </button>
+              <button class="btn btn-primary" id="run-code">
+                <i class="fas fa-play"></i> Запустить код
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="demo-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" id="demo-progress"></div>
+          </div>
+          <div class="progress-labels">
+            <span>Прокрутите чтобы увидеть больше</span>
+            <span id="progress-percent">0%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Курсы -->
+    <section id="courses" class="section courses">
+      <div class="container">
+        <h2 class="section-title">Наши <span class="highlight">курсы</span></h2>
+        <p class="section-subtitle">
+          Выберите направление, которое соответствует вашим целям
+        </p>
+
+        <div class="course-cards">
+          <div class="course-card">
+            <div class="course-header">
+              <h3>JavaScript Developer</h3>
+              <div class="course-price">
+                <span class="price">24 900 ₽</span>
+                <span class="period">/ курс</span>
+              </div>
+            </div>
+            <div class="course-features">
+              <p><i class="fas fa-check"></i> Длительность: 4 месяца</p>
+              <p><i class="fas fa-check"></i> 72 часа практики</p>
+              <p><i class="fas fa-check"></i> 5 реальных проектов</p>
+              <p><i class="fas fa-check"></i> Поддержка ментора</p>
+              <p><i class="fas fa-check"></i> Доступ к материалам на 1 год</p>
+            </div>
+            <a href="#contact" class="btn btn-primary btn-block"
+              >Записаться на курс</a
+            >
+          </div>
+
+          <div class="course-card featured">
+            <div class="course-badge">Популярный</div>
+            <div class="course-header">
+              <h3>Python Pro</h3>
+              <div class="course-price">
+                <span class="price">28 900 ₽</span>
+                <span class="period">/ курс</span>
+              </div>
+            </div>
+            <div class="course-features">
+              <p><i class="fas fa-check"></i> Длительность: 5 месяцев</p>
+              <p><i class="fas fa-check"></i> 90 часов практики</p>
+              <p><i class="fas fa-check"></i> 6 реальных проектов</p>
+              <p><i class="fas fa-check"></i> Индивидуальные консультации</p>
+              <p><i class="fas fa-check"></i> Доступ к материалам на 2 года</p>
+            </div>
+            <a href="#contact" class="btn btn-primary btn-block"
+              >Записаться на курс</a
+            >
+          </div>
+
+          <div class="course-card">
+            <div class="course-header">
+              <h3>Full-Stack Master</h3>
+              <div class="course-price">
+                <span class="price">42 900 ₽</span>
+                <span class="period">/ курс</span>
+              </div>
+            </div>
+            <div class="course-features">
+              <p><i class="fas fa-check"></i> Длительность: 6 месяцев</p>
+              <p><i class="fas fa-check"></i> 120 часов практики</p>
+              <p><i class="fas fa-check"></i> 8 реальных проектов</p>
+              <p><i class="fas fa-check"></i> Карьерная поддержка</p>
+              <p><i class="fas fa-check"></i> Пожизненный доступ</p>
+            </div>
+            <a href="#contact" class="btn btn-primary btn-block"
+              >Записаться на курс</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Форма заявки -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2 class="section-title">
+          Оставить <span class="highlight">заявку</span>
+        </h2>
+        <p class="section-subtitle">
+          Заполните форму, и мы свяжемся с вами для консультации по подходящему
+          курсу
+        </p>
+
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <h3>Контакты</h3>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h4>Email</h4>
+                <p>admission@codecraft.academy</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <h4>Телефон</h4>
+                <p>+7 (999) 123-45-67</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <h4>Время работы</h4>
+                <p>Пн-Пт: 10:00 - 20:00</p>
+                <p>Сб-Вс: 11:00 - 18:00</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h4>Адрес</h4>
+                <p>г. Москва, ул. Программистов, д. 42</p>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form" id="applicationForm">
+            <div class="form-group">
+              <input type="text" id="name" placeholder="Ваше имя" required />
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" placeholder="Email" required />
+            </div>
+            <div class="form-group">
+              <input type="tel" id="phone" placeholder="Телефон" required />
+            </div>
+            <div class="form-group">
+              <select id="course" required>
+                <option value="" disabled selected>Выберите курс</option>
+                <option value="javascript">JavaScript Developer</option>
+                <option value="python">Python Pro</option>
+                <option value="fullstack">Full-Stack Master</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea
+                id="message"
+                rows="4"
+                placeholder="Ваши вопросы или комментарии"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              Отправить заявку
+            </button>
+            <p class="form-notice">
+              Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <a href="#" class="logo">
+              <i class="fas fa-code"></i>
+              <span>CodeCraft</span>
+            </a>
+            <p>
+              Образовательная платформа для будущих разработчиков. Современные
+              курсы по программированию с практическим подходом.
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <h4>Курсы</h4>
+            <ul>
+              <li><a href="#courses">JavaScript Developer</a></li>
+              <li><a href="#courses">Python Pro</a></li>
+              <li><a href="#courses">Full-Stack Master</a></li>
+              <li><a href="#courses">Все курсы</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h4>Компания</h4>
+            <ul>
+              <li><a href="#about">О нас</a></li>
+              <li><a href="#teachers">Преподаватели</a></li>
+              <li><a href="#examples">Примеры работ</a></li>
+              <li><a href="#contact">Контакты</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-newsletter">
+            <h4>Подписка на новости</h4>
+            <p>Получайте информацию о новых курсах и акциях</p>
+            <form class="newsletter-form" id="newsletterForm">
+              <input type="email" placeholder="Ваш email" required />
+              <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2023 CodeCraft Academy. Все права защищены.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-vk"></i></a>
+            <a href="#"><i class="fab fa-telegram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
