@@ -676,3 +676,201 @@ document.addEventListener("DOMContentLoaded", function () {
 
   console.log("Интерактивная демонстрация загружена!");
 });
+
+// ===== БЕГУЩАЯ СТРОКА ТЕХНОЛОГИЙ =====
+
+document.addEventListener("DOMContentLoaded", function () {
+  function updateMarqueeSpeed() {
+    const marquees = document.querySelectorAll(".marquee-content");
+    const isMobile = window.innerWidth <= 768;
+
+    marquees.forEach((marquee) => {
+      const isReverse = marquee.parentElement.classList.contains("reverse");
+      const baseDuration = isReverse ? 25 : 30;
+      const duration = isMobile ? baseDuration * 1.5 : baseDuration;
+
+      marquee.style.animationDuration = `${duration}s`;
+    });
+  }
+
+  function addParallaxEffect() {
+    const techSection = document.querySelector(".technologies");
+    if (!techSection) return;
+
+    const scrollPosition = window.pageYOffset;
+    const sectionTop = techSection.offsetTop;
+    const sectionHeight = techSection.offsetHeight;
+    const windowHeight = window.innerHeight;
+
+    if (
+      scrollPosition > sectionTop - windowHeight &&
+      scrollPosition < sectionTop + sectionHeight
+    ) {
+      const progress =
+        (scrollPosition - sectionTop + windowHeight) /
+        (windowHeight + sectionHeight);
+
+      const marquees = document.querySelectorAll(".marquee-content");
+      marquees.forEach((marquee, index) => {
+        const speedMultiplier = index === 0 ? 0.5 : 0.3;
+        const translateX = progress * 100 * speedMultiplier;
+
+        if (marquee.parentElement.classList.contains("reverse")) {
+          marquee.style.transform = `translateX(${translateX}%)`;
+        } else {
+          marquee.style.transform = `translateX(-${translateX}%)`;
+        }
+      });
+    }
+  }
+
+  function addIconSparkleEffect() {
+    const techIcons = document.querySelectorAll(".tech-item i");
+
+    techIcons.forEach((icon) => {
+      const delay = Math.random() * 5;
+      icon.style.animationDelay = `${delay}s`;
+
+      if (!icon.classList.contains("sparkle")) {
+        icon.classList.add("sparkle");
+
+        const style = document.createElement("style");
+        if (!document.getElementById("sparkle-animation")) {
+          style.id = "sparkle-animation";
+          style.textContent = `
+            @keyframes sparkle {
+              0%, 100% { filter: brightness(1) drop-shadow(0 0 0 rgba(255, 255, 255, 0)); }
+              50% { filter: brightness(1.3) drop-shadow(0 0 10px currentColor); }
+            }
+            
+            .tech-item i.sparkle {
+              animation: sparkle 3s ease-in-out infinite;
+            }
+            
+            .tech-item:hover i.sparkle {
+              animation: sparkle 0.8s ease-in-out infinite;
+            }
+          `;
+          document.head.appendChild(style);
+        }
+      }
+    });
+  }
+
+  updateMarqueeSpeed();
+  addIconSparkleEffect();
+
+  window.addEventListener("resize", updateMarqueeSpeed);
+
+  let ticking = false;
+  window.addEventListener("scroll", function () {
+    if (!ticking) {
+      window.requestAnimationFrame(function () {
+        addParallaxEffect();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  // Пауза анимации при наведении 
+  const techItems = document.querySelectorAll(".tech-item");
+  techItems.forEach((item) => {
+    item.addEventListener("mouseenter", function () {
+      const marquee = this.closest(".marquee-content");
+      if (marquee) {
+        marquee.style.animationPlayState = "paused";
+
+        this.style.transform = "translateY(-15px) scale(1.1)";
+      }
+    });
+
+    item.addEventListener("mouseleave", function () {
+      const marquee = this.closest(".marquee-content");
+      if (marquee) {
+        marquee.style.animationPlayState = "running";
+
+        this.style.transform = "";
+      }
+    });
+  });
+
+  // Клик дополнительной инфы
+  techItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      const techName = this.querySelector("span").textContent;
+      const iconClass = this.querySelector("i").className;
+
+      const messages = {
+        JavaScript:
+          "Современный JavaScript (ES6+) - основа фронтенд разработки",
+        Python: "Универсальный язык для веб-разработки и анализа данных",
+        React: "Библиотека для создания пользовательских интерфейсов",
+        "Node.js": "Среда выполнения JavaScript на сервере",
+        SQL: "Язык для работы с реляционными базами данных",
+        Git: "Система контроля версий для командной разработки",
+        HTML5: "Семантическая разметка веб-страниц",
+        CSS3: "Стилизация и анимации для веб-приложений",
+        SASS: "Препроцессор для удобной работы с CSS",
+        "Vue.js": "Прогрессивный фреймворк для создания UI",
+        Docker: "Контейнеризация приложений для развертывания",
+        "REST API": "Архитектурный стиль для веб-сервисов",
+        TypeScript: "Типизированная надстройка над JavaScript",
+        Django: "Высокоуровневый Python фреймворк",
+        "React Hooks": "Современный способ работы с состоянием в React",
+      };
+
+      const message = messages[techName] || `Вы выбрали: ${techName}`;
+
+      showNotification(`<strong>${techName}</strong>: ${message}`, "info");
+
+      this.style.transform = "scale(0.95)";
+      setTimeout(() => {
+        this.style.transform = "";
+      }, 200);
+    });
+  });
+
+  // счетчик
+  function animateStats() {
+    const statNumbers = document.querySelectorAll(".stat-number");
+
+    statNumbers.forEach((stat) => {
+      const target = parseInt(stat.textContent);
+      if (isNaN(target)) return;
+
+      let current = 0;
+      const increment = target / 20;
+      const duration = 1500;
+
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          stat.textContent = stat.textContent;
+          clearInterval(timer);
+        } else {
+          stat.textContent = Math.floor(current);
+        }
+      }, duration / 20);
+    });
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateStats();
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  const statsSection = document.querySelector(".tech-stats");
+  if (statsSection) {
+    observer.observe(statsSection);
+  }
+
+  console.log("Бегущая строка технологий инициализирована!");
+});
